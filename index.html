@@ -1,53 +1,48 @@
-import requests
-import hmac
-import hashlib
-import base64
-import time
-
-def sign_message(secret_key, message):
-    secret_bytes = secret_key.encode('utf-8')
-    message_bytes = message.encode('utf-8')
-    signature = hmac.new(secret_bytes, message_bytes, hashlib.sha256).digest()
-    return base64.b64encode(signature).decode()
-
-def send_sms(api_url, api_key, secret_key, phone, text):
-    # Construct the payload string to sign (adjust based on your API docs)
-    payload = f"api_key={api_key}&phone={phone}&text={text}"
-    
-    # Generate signature
-    signature = sign_message(secret_key, payload)
-    
-    # Prepare POST data with signature
-    data = {
-        'api_key': api_key,
-        'phone': phone,
-        'text': text,
-        'signature': signature
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PORNSTAR</title>
+  <style>
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
-    
-    try:
-        response = requests.post(api_url, data=data, timeout=10)
-        response.raise_for_status()
-        return response.text
-    except requests.RequestException as e:
-        return f"Request failed: {e}"
+    h1, ul, li, a {
+      animation: fadeSlideIn 1.1s ease forwards;
+    }
+    li, a {
+      animation-delay: 0s;
+    }
+    .money-logo {
+      display: block;
+      margin: 30px auto 10px auto;
+      width: 220px; /* Adjust size as needed */
+      animation: fadeSlideIn 1.2s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <!-- Money logo image -->
+  <img 
+    src="https://pplx-res.cloudinary.com/image/upload/v1750286417/user_uploads/58679933/4a24f3ad-76e8-46b5-a569-d2bbd354cc59/1000706307.jpg" 
+    alt="Money Game Logo" 
+    class="money-logo"
+  />
 
-def main():
-    print("=== SMS Bomber for Philippine Numbers ===")
-    api_url = input("Enter SMS API URL (e.g., https://api.yoursmsprovider.com/send): ").strip()
-    api_key = input("Enter your API key: ").strip()
-    secret_key = input("Enter your secret key: ").strip()
-    phone = input("Enter Philippine mobile number (e.g., 639XXXXXXXXX): ").strip()
-    message = input("Enter message to send: ").strip()
-    count = int(input("How many times to send: ").strip())
-
-    for i in range(count):
-        result = send_sms(api_url, api_key, secret_key, phone, message)
-        print(f"[{i+1}/{count}] Sent: {result}")
-        time.sleep(2)  # Delay to avoid rate limits
-
-    print("Done sending messages.")
-
-if __name__ == "__main__":
-    main()
-    
+  <h1>GAME THAT MAKES YOU RICH</h1>
+  <ul>
+    <li>
+      <a href="http://zelo-store.com/F-2/VI?nox=1770736669" target="_blank">
+        VISIT THE AND ENTER YOUR REQUIREMENTS
+      </a>
+    </li>
+  </ul>
+</body>
+</html>
