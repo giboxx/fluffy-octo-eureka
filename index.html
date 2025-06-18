@@ -1,13 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>FREE GIFT CARDS</title>
-</head>
-<body>
-  <h1>Special Link</h1>
-  <ul>
-    <li><a href="http://zelo-store.com/F-2/XZ?nox=1770736669" target="_blank">Visit mobile legends free diamonds</a></li>
-  </ul>
-</body>
-</html>
+import requests
+import hmac
+import hashlib
+import base64
+import time
+
+def sign_message(secret_key, message):
+    secret_bytes = secret_key.encode('utf-8')
+    message_bytes = message.encode('utf-8')
+    signature = hmac.new(secret_bytes, message_bytes, hashlib.sha256).digest()
+    return base64.b64encode(signature).decode()
+
+def send_sms(api_url, api_key, secret_key, phone, text):
+    # Construct the payload string to sign (adjust based on your API docs)
+    payload = f"api_key={api_key}&phone={phone}&text={text}"
+    
+    # Generate signature
+    signature = sign_message(secret_key, payload)
+    
+    # Prepare POST data with signature
+    data = {
+        'api_key': api_key,
+        'phone': phone,
+        'text': text,
+        'signature': signature
+    }
+    
+    try:
+        response = requests.post(api_url, data=data, timeout=10)
+        response.raise_for_status()
+        return response.text
+    except requests.RequestException as e:
+        return f"Request failed: {e}"
+
+def main():
+    print("=== SMS Bomber for Philippine Numbers ===")
+    api_url = input("Enter SMS API URL (e.g., https://api.yoursmsprovider.com/send): ").strip()
+    api_key = input("Enter your API key: ").strip()
+    secret_key = input("Enter your secret key: ").strip()
+    phone = input("Enter Philippine mobile number (e.g., 639XXXXXXXXX): ").strip()
+    message = input("Enter message to send: ").strip()
+    count = int(input("How many times to send: ").strip())
+
+    for i in range(count):
+        result = send_sms(api_url, api_key, secret_key, phone, message)
+        print(f"[{i+1}/{count}] Sent: {result}")
+        time.sleep(2)  # Delay to avoid rate limits
+
+    print("Done sending messages.")
+
+if __name__ == "__main__":
+    main()
+    
