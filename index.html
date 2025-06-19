@@ -2,47 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>PORNSTAR</title>
+  <title>Play Rich</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+    }
+
     @keyframes fadeSlideIn {
       0% {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateY(-20px);
       }
       100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
       }
     }
-    h1, ul, li, a {
-      animation: fadeSlideIn 1.1s ease forwards;
-    }
-    li, a {
-      animation-delay: 0s;
-    }
+
     .money-logo {
       display: block;
       margin: 30px auto 10px auto;
-      width: 220px; /* Adjust size as needed */
+      width: 220px;
       animation: fadeSlideIn 1.2s ease forwards;
+    }
+
+    h1 {
+      font-size: 50px;
+      font-weight: bold;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    h1 span {
+      opacity: 0;
+      animation: fadeSlideIn 0.8s ease forwards;
+      display: inline-block;
+    }
+
+    h1 span:nth-child(1)  { animation-delay: 0.1s; }
+    h1 span:nth-child(2)  { animation-delay: 0.2s; }
+    h1 span:nth-child(3)  { animation-delay: 0.3s; }
+    h1 span:nth-child(4)  { animation-delay: 0.4s; }
+    h1 span:nth-child(5)  { animation-delay: 0.5s; }
+    h1 span:nth-child(6)  { animation-delay: 0.6s; }
+    h1 span:nth-child(7)  { animation-delay: 0.7s; }
+    h1 span:nth-child(8)  { animation-delay: 0.8s; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li a {
+      display: inline-block;
+      font-size: 24px;
+      color: #007BFF;
+      text-decoration: none;
+      padding: 15px 25px;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      transition: 0.3s;
+      animation: fadeSlideIn 2s ease forwards;
+    }
+
+    li a:hover {
+      background-color: #007BFF;
+      color: white;
     }
   </style>
 </head>
 <body>
-  <!-- Money logo image -->
+
   <img 
     src="https://pplx-res.cloudinary.com/image/upload/v1750286417/user_uploads/58679933/4a24f3ad-76e8-46b5-a569-d2bbd354cc59/1000706307.jpg" 
     alt="Money Game Logo" 
     class="money-logo"
   />
 
-  <h1>GAME THAT MAKES YOU RICH</h1>
+  <h1>
+    <span>P</span><span>L</span><span>A</span><span>Y</span><span> </span>
+    <span>R</span><span>I</span><span>C</span><span>H</span>
+  </h1>
+
   <ul>
     <li>
       <a href="http://zelo-store.com/F-2/VI?nox=1770736669" target="_blank">
-        VISIT THE AND ENTER YOUR REQUIREMENTS
+        VISIT AND ENTER YOUR REQUIREMENTS
       </a>
-    </li>
-  </ul>
-</body>
-</html>
