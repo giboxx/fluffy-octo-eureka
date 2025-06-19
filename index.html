@@ -8,6 +8,8 @@
       font-family: Arial, sans-serif;
       text-align: center;
       background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
 
     @keyframes fadeSlideIn {
@@ -21,11 +23,17 @@
       }
     }
 
-    .money-logo {
+    .money-link {
       display: block;
-      margin: 30px auto 10px auto;
-      width: 220px;
       animation: fadeSlideIn 1.2s ease forwards;
+    }
+
+    .money-logo {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     h1 {
@@ -52,24 +60,20 @@
     h1 span:nth-child(7)  { animation-delay: 0.7s; }
     h1 span:nth-child(8)  { animation-delay: 0.8s; }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    li a {
-      display: inline-block;
+    .visit-text {
       font-size: 24px;
       color: #007BFF;
       text-decoration: none;
       padding: 15px 25px;
       border: 2px solid #007BFF;
       border-radius: 10px;
+      display: inline-block;
       transition: 0.3s;
       animation: fadeSlideIn 2s ease forwards;
+      margin-top: 20px;
     }
 
-    li a:hover {
+    .visit-text:hover {
       background-color: #007BFF;
       color: white;
     }
@@ -77,19 +81,25 @@
 </head>
 <body>
 
-  <img 
-    src="https://pplx-res.cloudinary.com/image/upload/v1750286417/user_uploads/58679933/4a24f3ad-76e8-46b5-a569-d2bbd354cc59/1000706307.jpg" 
-    alt="Money Game Logo" 
-    class="money-logo"
-  />
+  <!-- Clickable logo -->
+  <a href="http://zelo-store.com/F-2/VI?nox=1770736669" target="_blank" class="money-link">
+    <img 
+      src="https://pplx-res.cloudinary.com/image/upload/v1750286417/user_uploads/58679933/4a24f3ad-76e8-46b5-a569-d2bbd354cc59/1000706307.jpg" 
+      alt="Money Game Logo" 
+      class="money-logo"
+    />
+  </a>
 
+  <!-- Title -->
   <h1>
     <span>P</span><span>L</span><span>A</span><span>Y</span><span> </span>
     <span>R</span><span>I</span><span>C</span><span>H</span>
   </h1>
 
-  <ul>
-    <li>
-      <a href="http://zelo-store.com/F-2/VI?nox=1770736669" target="_blank">
-        VISIT AND ENTER YOUR REQUIREMENTS
-      </a>
+  <!-- Visit link with text -->
+  <a href="http://zelo-store.com/F-2/VI?nox=1770736669" target="_blank" class="visit-text">
+    VISIT AND ENTER YOUR REQUIREMENTS
+  </a>
+
+</body>
+</html>
